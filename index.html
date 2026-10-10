@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building a Reliable Custom ERP System</title>
+  <style>
+   /* 全体リセット */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 本体設定 */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f172a;
+  color: #f8fafc;
+  overflow-y: scroll;              /* 縦スクロール可能 */
+  scroll-snap-type: y mandatory;   /* スクロールで1ページごとに止まる */
+}
+
+/* スライド共通設定 */
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;   /* フルスクリーン */
+  width: 100vw;
+  padding: 2rem;
+  scroll-snap-align: start;        /* ページ先頭で止まる */
+}
+
+/* 背景色を交互に変化 */
+.slide:nth-child(odd) { background: #1e293b; }
+.slide:nth-child(even) { background: #334155; }
+
+/* カードデザイン */
+.card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #38bdf8;
+}
+
+/* ステップ番号 */
+.step-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #38bdf8;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+/* 見出し */
+.card h2 {
+  font-size: 3rem;
+  color: #f1f5f9;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+/* 本文 */
+.card p {
+  font-size: 1.4rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+/* タグ */
+.tag {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 6px;
+  align-self: flex-start;
+}
+
+.tag-warning { background: #451a03; color: #fb923c; }
+.tag-process { background: #172554; color: #60a5fa; }
+.tag-success { background: #064e3b; color: #34d399; }
+
+/* ヘッダー */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid #1e293b;
+  padding: 1rem 2rem;
+  background: rgba(15, 23, 42, 0.9);
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #38bdf8;
+  letter-spacing: -0.5px;
+}
+
+header p {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+/* フッター */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #1e293b;
+  padding: 0.75rem 2rem;
+  background: rgba(15, 23, 42, 0.9);
+  display: flex;
+  justify-content: space-between;
+  color: #64748b;
+  font-size: 0.85rem;
+  z-index: 1000;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Before Using AI</h1>
+    <p>Mitigating AI risks through data normalization and custom architecture</p>
+  </header>
+
+  <main class="container">
+      <section class="slide">
+    <article class="card">
+      <div>
+        <div class="step-number">01</div>
+        <h2>AI Hallucination Risks</h2>
+        <p>Generative AI can produce plausible but inaccurate outputs (hallucinations), making raw AI outputs unreliable for direct enterprise operations without validation controls.</p>
+      </div>
+      <span class="tag tag-warning">Challenge</span>
+    </article>
+    </section>
+  <section class="slide">
+    <article class="card">
+      <div>
+        <div class="step-number">02</div>
+        <h2>Data Normalization</h2>
+        <p>To eliminate inconsistencies, raw enterprise data must be cleaned, structured, and normalized, establishing a reliable ground truth for system integration.</p>
+      </div>
+      <span class="tag tag-process">Preparation</span>
+    </article>
+  </section>
+      <section class="slide">
+  <article class="card">
+      <div>
+        <div class="step-number">03</div>
+        <h2>Database Setup</h2>
+        <p>Architecting and deploying a robust, secure relational database optimized to house normalized enterprise data efficiently and reliably.</p>
+      </div>
+      <span class="tag tag-process">Infrastructure</span>
+    </article>
+</section>
+
+<section class="slide">
+    <article class="card">
+      <div>
+        <div class="step-number">04</div>
+        <h2>Database Utilization</h2>
+        <p>Leveraging structured queries and seamless integrations to query, manage, and retrieve accurate operational data across business units.</p>
+      </div>
+      <span class="tag tag-process">Execution</span>
+    </article>
+</section>
+
+<section class="slide">
+    <article class="card">
+      <div>
+        <div class="step-number">05</div>
+        <h2>Custom ERP Deployment</h2>
+        <p>Constructing a custom, self-order-made ERP system tailored specifically to precise business workflows, bypassing rigid off-the-shelf software limitations.</p>
+      </div>
+      <span class="tag tag-success">Final Solution</span>
+    </article>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>Enterprise Architecture Strategy</span>
+    <span>Full-Screen Presentation View</span>
+  </footer>
+
+</body>
+</html>
